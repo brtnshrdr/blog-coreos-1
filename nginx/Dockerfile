@@ -1,5 +1,5 @@
 FROM stackbrew/ubuntu:saucy
-MAINTAINER Marcel de Graaf <mail@marceldegraaf.net>
+MAINTAINER Nick Richardson <richa283@uwm.edu>
 
 # Install Nginx
 RUN apt-get install -y --force-yes software-properties-common
@@ -8,7 +8,7 @@ RUN apt-get update
 RUN apt-get install -y --force-yes nginx curl
 
 # Install confd
-RUN curl -L https://github.com/kelseyhightower/confd/releases/download/v0.3.0/confd_0.3.0_linux_amd64.tar.gz | tar xz
+RUN curl -L https://github.com/kelseyhightower/confd/releases/download/v0.5.0/confd_0.5.0_linux_amd64.tar.gz | tar xz
 RUN mv confd /usr/local/bin/confd
 
 # Create directories
