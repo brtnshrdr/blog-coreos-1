@@ -1,14 +1,12 @@
-FROM stackbrew/ubuntu:saucy
+FROM nginx:1.7
 MAINTAINER Nick Richardson <richa283@uwm.edu>
 
 # Install Nginx
-RUN apt-get install -y --force-yes software-properties-common
-RUN add-apt-repository ppa:nginx/stable
 RUN apt-get update
-RUN apt-get install -y --force-yes nginx curl
+RUN apt-get install -y --force-yes curl
 
 # Install confd
-RUN curl -L https://github.com/kelseyhightower/confd/releases/download/v0.5.0/confd_0.5.0_linux_amd64.tar.gz | tar xz
+RUN curl -L https://github.com/kelseyhightower/confd/releases/download/v0.5.0/confd-0.5.0-linux-amd64 -o confd
 RUN mv confd /usr/local/bin/confd
 
 # Create directories
