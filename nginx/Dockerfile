@@ -8,6 +8,7 @@ RUN apt-get install -y --force-yes curl
 # Install confd
 RUN curl -L https://github.com/kelseyhightower/confd/releases/download/v0.5.0/confd-0.5.0-linux-amd64 -o confd
 RUN mv confd /usr/local/bin/confd
+RUN chmod +x /usr/local/bin/confd
 
 # Create directories
 RUN mkdir -p /etc/confd/conf.d

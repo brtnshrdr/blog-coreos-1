@@ -8,4 +8,4 @@ ExecStart=/usr/bin/docker run --rm --name nginx -p 80:80 -e HOST_IP=${COREOS_PUB
 ExecStop=/usr/bin/docker kill nginx
 
 [X-Fleet]
-X-Conflicts=nginx.service
+X-ConditionMachineID=e8f795688963455a94e6adbc664a5982
