@@ -1,14 +1,16 @@
-upstream mediapixeldesign.com {
+upstream backend {
+  ip_hash;
   {{ range $server := .app_server }}
-  server {{ $server.Value }};
+  server {{ $server.Value }} max_fails=5  fail_timeout=15s; 
   {{ end }}
 }
 
 server {
+  listen       80  default_server;
   server_name mediapixeldesign.com;
 
   location / {
-    proxy_pass http://mediapixeldesign.com;
+    proxy_pass http://backend;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection "upgrade";
