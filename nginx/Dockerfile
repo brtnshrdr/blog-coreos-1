@@ -1,4 +1,4 @@
-FROM nginx:1.7
+FROM dockerfile/nginx
 MAINTAINER Nick Richardson <richa283@uwm.edu>
 
 # Install Nginx

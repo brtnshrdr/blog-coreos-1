@@ -1,5 +1,5 @@
 [template]
-keys        = [ "/services/itb" ]
+keys        = [ "app/server" ]
 owner       = "nginx"
 mode        = "0644"
 src         = "nginx.conf.tmpl"
